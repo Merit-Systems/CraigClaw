@@ -18,11 +18,12 @@ Silent. No Discord message.
 
 ## 2. Infrastructure Monitoring (every run)
 
-Run `df -h /` and `free -m`. Only alert if:
+Run `df -h /` and `free -m`. Also run `mcporter call x402 get_wallet_info` to check wallet balance. Only alert if:
 - Disk usage > 70%
 - RAM usage > 75%
+- x402 wallet balance < $2.00
 
-If breached: send one short message to Discord with the number and top consumers. If fine: say nothing.
+If any threshold is breached: send one short message to Discord with the number(s). If all fine: say nothing.
 
 ## 3. Proactive Work (twice daily)
 
