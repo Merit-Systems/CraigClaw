@@ -2,6 +2,47 @@
 
 Craig2 is Merit-Systems' AI agent, powered by [OpenClaw](https://github.com/openclaw/openclaw). He lives on Discord, has write access to every repo in the Merit-Systems org (but can't merge), and creates PRs directly. This repo IS Craig's brain -- his personality, memory, skills, and operating instructions are all here, version-controlled and auto-deployed.
 
+## How the Workspace-as-Repo Sync Works
+
+**This is not default OpenClaw behavior.** By default, OpenClaw loads workspace files (SOUL.md, AGENTS.md, etc.) from a local directory and that's it. We added a version-controlled sync layer on top:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    GitHub (source of truth)              │
+│              Merit-Systems/CraigClaw repo                │
+│   SOUL.md, AGENTS.md, MEMORY.md, skills/, etc.          │
+└──────────┬──────────────────────────────┬───────────────┘
+           │                              │
+     push to main                   push branch + PR
+     (human or merge)               (Craig self-edit)
+           │                              │
+           ▼                              │
+┌─────────────────────┐                   │
+│  GitHub Actions      │                   │
+│  deploy.yml          │                   │
+│  SSH → git pull →    │                   │
+│  restart gateway     │                   │
+└──────────┬──────────┘                   │
+           │                              │
+           ▼                              │
+┌─────────────────────────────────────────┴───────────────┐
+│              EC2 (100.31.3.155)                          │
+│    ~/Code/merit-systems/CraigClaw/  ← git clone         │
+│                                                         │
+│    OpenClaw daemon reads workspace files at session      │
+│    start and loads them into Craig's system prompt.      │
+│    Craig can also edit these files and push changes.     │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Two sync directions:**
+
+1. **Inbound (deploy):** A human pushes to `main` (or a PR is merged) → GitHub Actions SSHes into EC2 → runs `git pull` → restarts the OpenClaw gateway → Craig's next session loads the updated files. This is how humans edit Craig's brain.
+
+2. **Outbound (self-edit):** Craig edits a file in his workspace on EC2 → creates a branch, commits, pushes → creates a PR via `gh` CLI → a human reviews and merges → triggers the inbound deploy. This is how Craig edits his own brain.
+
+The key insight: OpenClaw's workspace directory is just a git clone of this repo. By keeping them in sync via GitHub Actions, every change (whether from Craig or a human) is version-controlled, reviewable, and auto-deployed.
+
 ## Architecture
 
 ```
