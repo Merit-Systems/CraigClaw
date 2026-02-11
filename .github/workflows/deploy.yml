@@ -17,5 +17,6 @@ jobs:
           script: |
             cd ~/Code/merit-systems/CraigClaw
             git pull origin main
+            bash deploy/patch-openclaw.sh
             systemctl --user restart openclaw-gateway
             echo "Deployed $(git log --oneline -1)"
