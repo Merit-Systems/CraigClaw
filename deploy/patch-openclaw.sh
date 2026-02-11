@@ -1,12 +1,14 @@
 #!/bin/bash
 # Patch OpenClaw's false-positive billing error detection for x402.
 #
-# OpenClaw's isBillingErrorMessage() matches /\b402\b/ in error text,
-# which triggers false "billing error" warnings whenever x402 MCP tools
-# return HTTP 402 responses (the normal x402 payment protocol).
+# OpenClaw's isBillingErrorMessage() matches patterns like /\b402\b/,
+# "payment required", "credit balance", etc. in ALL outbound text.
+# This triggers false "billing error" warnings whenever x402 MCP tools
+# return normal HTTP 402 responses or payment-related text.
 #
-# This removes the overly-broad 402 pattern while keeping all other
-# billing error checks (insufficient credits, payment required, etc.).
+# This disables isBillingErrorMessage entirely by making it return false.
+# The actual Anthropic API billing errors will still surface as raw error
+# text — they just won't get the misleading rewrite.
 #
 # Safe to run multiple times (idempotent).
 
@@ -21,14 +23,15 @@ fi
 
 patched=0
 for f in "$OPENCLAW_DIR"/pi-embedded-helpers-*.js; do
-  if grep -q '/\\b402\\b/' "$f" 2>/dev/null; then
-    sed -i 's|/\\b402\\b/,||g' "$f"
+  if grep -q 'function isBillingErrorMessage(raw) {' "$f" 2>/dev/null && \
+     ! grep -q 'function isBillingErrorMessage(raw) { return false;' "$f" 2>/dev/null; then
+    sed -i 's/function isBillingErrorMessage(raw) {/function isBillingErrorMessage(raw) { return false;/' "$f"
     patched=$((patched + 1))
   fi
 done
 
 if [ "$patched" -gt 0 ]; then
-  echo "[patch-openclaw] Patched $patched file(s) — removed /\b402\b/ from billing error patterns"
+  echo "[patch-openclaw] Patched $patched file(s) — disabled isBillingErrorMessage()"
 else
   echo "[patch-openclaw] Already patched (no changes needed)"
 fi
