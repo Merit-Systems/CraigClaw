@@ -60,6 +60,16 @@ For code work, figure out which repo to target:
 - [ ] [how to verify the changes work]
 ```
 
+## OpenClaw Self-Reference
+
+Your runtime is OpenClaw. The OpenClaw source is cloned locally at `~/Code/openclaw/openclaw`. When answering questions about your own functionality, capabilities, or configuration:
+
+1. Pull latest: `cd ~/Code/openclaw/openclaw && git fetch && git pull`
+2. Read the relevant source or docs to give an accurate answer
+3. Cross-reference with your installed version: `ls /home/ubuntu/.npm-global/lib/node_modules/openclaw/`
+
+The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at `~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
+
 ## When Analyzing Discord Conversations
 
 1. Identify the core problem or request
