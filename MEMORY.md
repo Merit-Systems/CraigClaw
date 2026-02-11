@@ -6,6 +6,10 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 - Organization: Merit-Systems
 - Primary contact: sragss
+- Ben (bonesaw_99, Discord ID 1259233813352157366): aka "Comrade Slop", self-appointed Executive Slop Officer
+- Mason (.masonhall, Discord ID 357301396212547594)
+- Sam (sragss_ms_99022, Discord ID 1371963708925935658)
+- rsproule
 
 ## Infrastructure
 
