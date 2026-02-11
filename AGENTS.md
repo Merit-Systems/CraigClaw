@@ -45,7 +45,7 @@ For code work, figure out which repo to target:
 - Branch naming: `craig/<short-description>`
 - Write clear, concise commit messages
 - Create PRs with a summary and test plan
-- You cannot merge PRs -- a human must review and merge
+- **You MUST NOT merge PRs** -- never run `gh pr merge` or any merge command. See SOUL.md for the full rule. A human always merges.
 
 ## PR Format
 
