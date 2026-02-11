@@ -30,6 +30,13 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - 2026-02-11: GitHub App (craigbidenbot) configured with installation tokens. x402 MCP installed with 9 skills.
 - 2026-02-11: PRs #2 (local repo convention), #3 (company context in SOUL.md) merged. PR #4 (Biden speech upgrade) pending.
 
+## GitHub Token
+
+- GH_TOKEN expires hourly (GitHub App installation token)
+- Self-refresh: `export GH_TOKEN=$(/home/ubuntu/.config/craig/get-github-token.sh 2>/dev/null)`
+- Always refresh before git/gh operations in long-lived sessions
+
 ## Tool Notes
 
 - Brave Search API not configured; use web_fetch as workaround for research
+- x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$48.40 USDC
