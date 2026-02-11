@@ -1,0 +1,13 @@
+# Secrets
+*.env
+credentials/
+auth-profiles.json
+
+# Runtime
+*.sqlite
+sessions/
+.DS_Store
+node_modules/
+
+# OS
+Thumbs.db

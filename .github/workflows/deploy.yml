@@ -1,0 +1,21 @@
+name: Deploy CraigClaw Workspace
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/Code/merit-systems/CraigClaw
+            git pull origin main
+            systemctl --user restart openclaw-gateway
+            echo "Deployed $(git log --oneline -1)"

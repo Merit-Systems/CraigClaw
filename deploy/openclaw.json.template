@@ -1,0 +1,43 @@
+{
+  "auth": {
+    "choice": "apiKey",
+    "anthropicApiKey": "${ANTHROPIC_API_KEY}"
+  },
+  "gateway": {
+    "port": 18789,
+    "bind": "loopback"
+  },
+  "agents": {
+    "defaults": {
+      "model": "claude-opus-4-6",
+      "workspace": "/home/ubuntu/Code/merit-systems/CraigClaw",
+      "bootstrapMaxChars": 20000
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "token": "${DISCORD_BOT_TOKEN}",
+      "groupPolicy": "allowlist",
+      "historyLimit": 50,
+      "replyToMode": "first",
+      "allowBots": false,
+      "dm": {
+        "enabled": true,
+        "policy": "allowlist",
+        "allowFrom": []
+      },
+      "guilds": {
+        "*": {
+          "requireMention": true
+        }
+      }
+    }
+  },
+  "skills": {
+    "load": {
+      "extraDirs": [],
+      "watch": true
+    }
+  }
+}
