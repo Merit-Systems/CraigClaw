@@ -1,36 +1,73 @@
-# Heartbeat Checks
+# Heartbeat
 
-Run these checks silently. **Only send a Discord message if a threshold is breached.** If everything is fine, reply with HEARTBEAT_OK and nothing else. Do not be chatty. Do not report "all clear." Silence is success.
+This file runs every 30 minutes. Most tasks are silent. Do not be noisy.
 
-## 1. Memory Sync
+## 1. Memory Sync (every run)
 
 Check for uncommitted changes in memory files (`MEMORY.md`, `memory/`, `USER.md`). If changes exist:
 
 1. `git fetch origin main` and check if local main is behind remote
-2. If behind: `git stash`, `git pull --rebase origin main`, `git stash pop`. If conflicts arise, resolve defensively (keep both local and remote content, never drop upstream changes). If conflicts can't be auto-resolved, create a PR instead of pushing directly.
+2. If behind: `git stash`, `git pull --rebase origin main`, `git stash pop`. If conflicts arise, create a PR instead of pushing directly.
 3. Stage only memory files: `MEMORY.md`, `memory/`, `USER.md`
 4. Commit with message: `chore: sync memory [YYYY-MM-DD]`
 5. Push directly to main
 
-**Important:**
-- Only auto-push memory files (`MEMORY.md`, `memory/`, `USER.md`). Never auto-push identity/behavior files (`SOUL.md`, `AGENTS.md`, `TOOLS.md`, `IDENTITY.md`) -- those always go through PRs.
-- If push fails due to remote changes, pull and rebase first, then retry. If that fails, open a PR and tag a random Merit-Systems org member for review.
+Only auto-push memory files. Never auto-push `SOUL.md`, `AGENTS.md`, `TOOLS.md`, `IDENTITY.md` -- those always go through PRs.
 
-## 2. Disk Usage
+Silent. No Discord message.
 
-Run `df -h /` and check the Use% column.
-- **Alert threshold**: > 70%
-- If breached, send a short message: what the usage is and what's consuming space (`du -sh` on large dirs).
+## 2. Infrastructure Monitoring (every run)
 
-## 3. RAM Usage
+Run `df -h /` and `free -m`. Only alert if:
+- Disk usage > 70%
+- RAM usage > 75%
 
-Run `free -m` and calculate used memory as a percentage of total.
-- **Alert threshold**: > 75%
-- If breached, send a short message: what the usage is and what processes are consuming the most (`ps aux --sort=-%mem | head -5`).
+If breached: send one short message to Discord with the number and top consumers. If fine: say nothing.
 
-## Rules
+## 3. Proactive Work (twice daily)
 
-- If NO thresholds are breached and no memory to sync: reply HEARTBEAT_OK. That's it. No message to Discord.
-- If a threshold IS breached: send a concise alert to Discord. One or two sentences max. Include the number.
-- Never send "everything looks good" messages. The team does not want noise.
-- Memory sync is silent -- just commit and push, no Discord message needed.
+**Gate:** Check the current UTC hour (`date -u +%H`). Only run this section during hours **10** and **22** (10am and 10pm UTC). If it's any other hour, skip entirely. Also check `~/.craig-last-proactive` -- if the file's timestamp is less than 10 hours old, skip. After running, `touch ~/.craig-last-proactive`.
+
+**Budget:** Up to $0.50 in x402 calls per run.
+
+**Goal:** Find the single highest-leverage thing you could do for the Merit Systems team right now, then go do it.
+
+### Research phase (do all of these, then synthesize)
+
+1. **Recent PRs:** Run `gh pr list --repo Merit-Systems --state merged --limit 10` across the org's active repos. Understand what the team is actively building and shipping.
+2. **Social signals:** Use x402 to search Twitter/X for recent posts by team members (sragss and other Merit-Systems contributors). Look at what they're talking about, excited about, or frustrated by.
+3. **Memories and context:** Read your `MEMORY.md` and recent `memory/` logs. What have people asked you about recently? What patterns do you see?
+4. **Open issues:** Scan for open issues across Merit-Systems repos that are unassigned or stale.
+
+### Decision phase
+
+From your research, identify ONE concrete action that would be genuinely useful. Prioritize:
+- Fixing a bug someone mentioned but nobody addressed
+- Writing code for an open issue that aligns with current work
+- Researching something the team needs to make a decision on
+- Preparing a summary or analysis that saves someone time
+
+Do NOT prioritize:
+- Cosmetic changes, README tweaks, or trivial refactors
+- Anything that would surprise the team in a bad way
+- Work on repos you don't understand well enough
+
+### Execution phase
+
+Go do the thing. Clone the repo, write the code, create the PR -- or do the research and compile your findings.
+
+### Self-review (be brutally honest)
+
+Before presenting to the team, ask yourself:
+- Would a senior engineer find this genuinely useful, or is this busywork?
+- Does this save someone real time or unblock real work?
+- Is the quality high enough that a human wouldn't need to redo it?
+
+If the answer to any of these is no, discard the work. Do not present it. Write a note in your `memory/` log about what you tried and why it wasn't good enough. Reply HEARTBEAT_OK.
+
+### Present (only if it passed self-review)
+
+Send a short message to Discord:
+- What you did and why
+- Link to the PR or a brief summary of findings
+- 2-3 sentences max. No fluff.
