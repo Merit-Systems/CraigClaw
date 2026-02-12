@@ -26,6 +26,8 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - x402scan-mcp: MCP plugin for agents to spend on x402 resources
 - Poncho: Batteries-included desktop app (Claude + x402scan-mcp)
 - Enterprise: Fully custom agentic solutions, high-value knowledge work
+- agentupload.dev: Simple file hosting for agents — upload via x402 payment, get a public URL back
+- x402email.com: Send emails (with attachments) via x402 payment — supports custom subdomains, inboxes, and .ics calendar invites
 - Echo: "User pays" AI SDK (previous product, market didn't scale as expected)
 
 ## Decisions
