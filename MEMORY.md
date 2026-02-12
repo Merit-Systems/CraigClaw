@@ -6,14 +6,34 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 - Organization: Merit-Systems
 - Primary contact: sragss
-- Sam (sragss_ms_99022, Discord ID 1371963708925935658) — sam@merit.systems
-- Ryan (rsproule) — ryan@merit.systems
-- Shafu — shafu@merit.systems
-- Mason (.masonhall, Discord ID 357301396212547594) — mason@merit.systems
-- Alvaro — alvaro@merit.systems
-- Jason — jason@merit.systems
-- Ben (bonesaw_99, Discord ID 1259233813352157366): aka "Comrade Slop", Executive Slop Officer — ben@merit.systems
-- Mitch — mitch@merit.systems
+
+### Team Members with GitHub & Headshots
+
+| Name | Email | GitHub | Discord | Twitter | Avatar URL | Avatar Description |
+|------|-------|--------|---------|---------|------------|-------------------|
+| Sam Ragsdale | sam@merit.systems | sragss (u/65786432) | sragss_ms_99022 (ID 1371963708925935658) | @samrags_ | `https://avatars.githubusercontent.com/u/65786432?v=4&s=400` | Young man, short dark brown hair, light eyes, blue button-up shirt, warm smile, outdoor venue |
+| Ryan Sproule | ryan@merit.systems | rsproule (u/24497652) | rsproule | @ryanfsproule | `https://avatars.githubusercontent.com/u/24497652?v=4&s=400` | Cyberpunk/sci-fi digital illustration (not a real photo) |
+| Mason Hall | mason@merit.systems | fmhall (u/11855252) | .masonhall (ID 357301396212547594) | @0xMasonH | `https://avatars.githubusercontent.com/u/11855252?v=4&s=400` | Pixel art - brown hair, goatee, dark top, sunset bg |
+| Shafu | shafu@merit.systems | shafu0x (u/12211335) | — | @shafu0x | `https://avatars.githubusercontent.com/u/12211335?v=4&s=400` | Pixel art - dark curly hair, glasses, stubble, white shirt |
+| Jason Hedman | jason@merit.systems | jasonhedman (u/40368124) | — | @jsonhedman | `https://avatars.githubusercontent.com/u/40368124?v=4&s=400` | Young man, wavy brown hair, navy suit, red tie, formal portrait |
+| Alvaro Echevarria Cuesta | alvaro@merit.systems | alvaroechevarriacuesta (u/126526313) | — | — | `https://avatars.githubusercontent.com/u/126526313?v=4&s=400` | B&W photo, muscular build, short dark hair fade |
+| Ben Reilly | ben@merit.systems | zdql (u/84412547) | bonesaw_99 (ID 1259233813352157366) | @zdql__ | `https://avatars.githubusercontent.com/u/84412547?v=4&s=400` | Artistic/surreal - face covered in marbled paint, light eyes |
+| Mitch | mitch@merit.systems | (unknown) | — | — | (unknown) | — |
+
+**Note:** Sam's CEO & Founder (formerly a16z crypto, Google). Ryan's CTO. Mason formerly a16z. Jason's Founding Engineer (CS + Math at Vanderbilt). Some avatars are pixel art or illustrations, not real headshots.
+
+**GitHub avatar tip:** Append `&s=800` for high-res versions.
+
+### Team Photos on Disk
+- Location: `~/Code/merit-systems/CraigClaw/assets/team-photos/`
+- Files: sam-ragsdale.jpg, ryan-sproule.jpg, shafu.jpg, mason-hall.png (1203x1203 ✅), jason-hedman.jpg, ben.jpg, alvaro.jpg
+- Only Mason's photo meets 800x800 target. Others are 460x460 (GitHub) or 390x390 (Ben).
+- Mitch: no photo found — need last name to search further
+- LinkedIn profiles: Sam (sam-ragsdale-2ba55b122), Ryan (ryansproule), Shafu (sharif-elfouly-975146142), Mason (hallmason), Jason (jason-hedman), Alvaro (alvaro-echevarria-cuesta-6687b91b4)
+
+### Key People (non-team)
+- Emily Devery: Sam's fiancée, designer at Goodby Silverstein & Partners, email: emily.b.devery@gmail.com, portfolio: emilydevery.com
+- Lucas Shin: email: lucas@artemisanalytics.com (Artemis Analytics)
 
 ## Craig's Email
 
