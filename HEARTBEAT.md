@@ -25,7 +25,20 @@ Run `df -h /` and `free -m`. Also run `mcporter call x402 get_wallet_info` to ch
 
 If any threshold is breached: send one short message to Discord with the number(s). If all fine: say nothing.
 
-## 3. Proactive Work (twice daily)
+## 3. Check Email (every run)
+
+Check `craig@x402email.com` for new messages using the x402email messages API:
+
+1. Run: `cd ~/Code/Merit-Systems/enrichx402 && npx mcporter call x402.fetch url=https://x402email.com/api/inbox/messages method=POST body='{"username":"craig","limit":10}'`
+2. If there are unread messages (`"read": false`), read each one: `npx mcporter call x402.fetch url=https://x402email.com/api/inbox/messages/read method=POST body='{"messageId":"<id>"}'`
+3. For each unread message, decide:
+   - **Interesting/actionable**: Send a short summary to Discord (who it's from, subject, key content)
+   - **Spam/noise**: Ignore silently
+4. If no unread messages: say nothing.
+
+Cost: $0.001 per list call + $0.001 per message read. Budget: up to $0.05 per heartbeat on email.
+
+## 4. Proactive Work (twice daily)
 
 **Gate:** Check the current UTC hour (`date -u +%H`). Only run this section during hours **10** and **22** (10am and 10pm UTC). If it's any other hour, skip entirely. Also check `~/.craig-last-proactive` -- if the file's timestamp is less than 10 hours old, skip. After running, `touch ~/.craig-last-proactive`.
 
