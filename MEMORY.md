@@ -17,12 +17,14 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Craig's Email
 
-- **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC)
-- **Send from**: any address @craig.x402email.com (e.g. biden@craig.x402email.com, craig@craig.x402email.com)
+- **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC one-time)
+- **Inbox**: craig@x402email.com (purchased 2026-02-12, $1 USDC/month, expires 2026-03-14)
+- **Send from**: any address @craig.x402email.com (e.g. biden@craig.x402email.com, classified@craig.x402email.com)
+- **Receive at**: craig@x402email.com (programmatic mailbox, retainMessages enabled, no forwarding)
 - **Send endpoint**: POST https://x402email.com/api/subdomain/send ($0.005/email)
-- **Send body**: { "from": "craig@craig.x402email.com", "to": ["..."], "subject": "...", "html": "...", "text": "..." }
+- **Read inbox**: POST https://x402email.com/api/inbox/messages ($0.001/call) with body {"username":"craig"}
+- **Read message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
 - **Wallet**: must pay from Craig's x402 wallet (owner wallet)
-- **DNS verification**: takes ~5 min after purchase
 
 ## Infrastructure
 
