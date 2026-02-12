@@ -11,6 +11,15 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Sam (sragss_ms_99022, Discord ID 1371963708925935658)
 - rsproule
 
+## Craig's Email
+
+- **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC)
+- **Send from**: any address @craig.x402email.com (e.g. biden@craig.x402email.com, craig@craig.x402email.com)
+- **Send endpoint**: POST https://x402email.com/api/subdomain/send ($0.005/email)
+- **Send body**: { "from": "craig@craig.x402email.com", "to": ["..."], "subject": "...", "html": "...", "text": "..." }
+- **Wallet**: must pay from Craig's x402 wallet (owner wallet)
+- **DNS verification**: takes ~5 min after purchase
+
 ## Infrastructure
 
 - Workspace repo: Merit-Systems/CraigClaw
