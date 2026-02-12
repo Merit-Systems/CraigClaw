@@ -51,6 +51,8 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - 2026-02-11: GitHub App (craigbidenbot) configured with installation tokens. x402 MCP installed with 9 skills.
 - 2026-02-11: PRs #2 (local repo convention), #3 (company context in SOUL.md) merged. PR #4 (Biden speech upgrade) pending.
 
+- 2026-02-12: Created PR poncho#127 — fix 400 errors killing chat conversations (onError handler + error banner). Closes poncho#65.
+
 ## GitHub Token
 
 - GH_TOKEN expires hourly (GitHub App installation token)
