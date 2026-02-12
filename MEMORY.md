@@ -18,7 +18,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 | Jason Hedman | jason@merit.systems | jasonhedman (u/40368124) | — | @jsonhedman | `https://avatars.githubusercontent.com/u/40368124?v=4&s=400` | Young man, wavy brown hair, navy suit, red tie, formal portrait |
 | Alvaro Echevarria Cuesta | alvaro@merit.systems | alvaroechevarriacuesta (u/126526313) | — | — | `https://avatars.githubusercontent.com/u/126526313?v=4&s=400` | B&W photo, muscular build, short dark hair fade |
 | Ben Reilly | ben@merit.systems | zdql (u/84412547) | bonesaw_99 (ID 1259233813352157366) | @zdql__ | `https://avatars.githubusercontent.com/u/84412547?v=4&s=400` | Artistic/surreal - face covered in marbled paint, light eyes |
-| Mitch | mitch@merit.systems | (unknown) | — | — | (unknown) | — |
+| Mitch | mitch@merit.systems | (unknown) | outperformed (ID 363520312329109504) | — | (local: assets/team-photos/mitch.png) | Young man, short dirty-blond hair, light eyes, black Merit Systems tee, thumbs up, triple-monitor coding setup |
 
 **Note:** Sam's CEO & Founder (formerly a16z crypto, Google). Ryan's CTO. Mason formerly a16z. Jason's Founding Engineer (CS + Math at Vanderbilt). Some avatars are pixel art or illustrations, not real headshots.
 
