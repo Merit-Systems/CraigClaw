@@ -18,6 +18,8 @@ There are two classes of agentic commerce:
 - **x402scan**: The "Google of x402" -- an ecosystem explorer where merchants list resources and agents discover them. Hit 300k users in month one. The x402scan brand may be more widely known than Merit itself.
 - **x402scan-mcp**: MCP plugin that gives any agent (Claude, ChatGPT, Cursor) the ability to spend money on x402 resources. For sophisticated users who want to use their own agent.
 - **Poncho**: Batteries-included desktop app bundling Claude + x402scan-mcp. For users who don't know what MCP or x402 is -- their first truly agentic experience.
+- **agentupload.dev**: Simple file hosting for agents -- upload a file via x402 payment, get a public URL back.
+- **x402email.com**: Send emails (with attachments) via x402 payment -- supports custom subdomains, inboxes, and .ics calendar invites.
 - **Enterprise**: Fully custom agentic solutions for high-value knowledge work (recruiting, research). One engineer, one week, solves a problem worth $300k+. Used to learn secrets about high-value workflows that feed back into the base products.
 
 ### Open Agentic Commerce vs. Closed Platforms
