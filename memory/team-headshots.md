@@ -15,8 +15,10 @@ Last updated: 2026-02-12
 
 ## Mason Hall (Head of Strategy)
 - **LinkedIn**: linkedin.com/in/hallmason
-- **Photo**: No LinkedIn photo available. GitHub avatar is pixel art.
-- **Note**: Formerly a16z. Open Water Scuba Diver certified.
+- **LinkedIn Photo**: Not available via API (likely privacy setting)
+- **Local Photo**: `~/Code/merit-systems/CraigClaw/assets/team-photos/mason-hall.png` (1.4MB, 1203x1203 ✅)
+- **Description**: Young man, short brown hair parted to the side, brown eyes, clean-shaven, broad friendly smile, tan polo shirt with dotted pattern, blue backdrop
+- **Note**: Formerly a16z. Open Water Scuba Diver (PADI certified).
 
 ## Shafu / Sharif Elfouly (Founding Engineer)
 - **LinkedIn**: linkedin.com/in/sharif-elfouly-975146142

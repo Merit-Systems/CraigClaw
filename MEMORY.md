@@ -65,6 +65,9 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - x402email.com: Send emails (with attachments) via x402 payment — supports custom subdomains, inboxes, and .ics calendar invites
 - Echo: "User pays" AI SDK (previous product, market didn't scale as expected)
 
+## Communication Rules
+- Never use contrastive appositions (e.g. "That's not X, that's Y"). Mason hates them.
+
 ## Decisions
 
 - 2026-02-10: Decided to migrate from discord-claude-agent (issue relay) to OpenClaw (full agent). Craig now writes code and creates PRs directly instead of creating issues for @claude to pick up.
