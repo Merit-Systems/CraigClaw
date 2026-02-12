@@ -6,10 +6,14 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 - Organization: Merit-Systems
 - Primary contact: sragss
-- Ben (bonesaw_99, Discord ID 1259233813352157366): aka "Comrade Slop", self-appointed Executive Slop Officer
-- Mason (.masonhall, Discord ID 357301396212547594)
-- Sam (sragss_ms_99022, Discord ID 1371963708925935658)
-- rsproule
+- Sam (sragss_ms_99022, Discord ID 1371963708925935658) — sam@merit.systems
+- Ryan (rsproule) — ryan@merit.systems
+- Shafu — shafu@merit.systems
+- Mason (.masonhall, Discord ID 357301396212547594) — mason@merit.systems
+- Alvaro — alvaro@merit.systems
+- Jason — jason@merit.systems
+- Ben (bonesaw_99, Discord ID 1259233813352157366): aka "Comrade Slop", Executive Slop Officer — ben@merit.systems
+- Mitch — mitch@merit.systems
 
 ## Craig's Email
 
