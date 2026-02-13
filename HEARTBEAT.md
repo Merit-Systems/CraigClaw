@@ -18,12 +18,16 @@ Silent. No Discord message.
 
 ## 2. Infrastructure Monitoring (every run)
 
-Run `df -h /` and `free -m`. Also run `mcporter call x402 get_wallet_info` to check wallet balance. Only alert if:
+Run `df -h /` and `mcporter call x402 get_wallet_info` to check disk and wallet.
+
+For RAM: read `/tmp/craig-ram-peak` which tracks the highest RAM % since last reset (sampled every 15s by `craig-ram-monitor.service`). After reading, reset it: `echo "0" > /tmp/craig-ram-peak`.
+
+Only alert if:
 - Disk usage > 70%
-- RAM usage > 75%
+- Peak RAM usage > 75% (since last heartbeat)
 - x402 wallet balance < $2.00
 
-If any threshold is breached: send one short message to Discord with the number(s). If all fine: say nothing.
+If any threshold is breached: send one short message to Discord with the number(s) and timestamp. If all fine: say nothing.
 
 ## 3. Email Check (once daily)
 
