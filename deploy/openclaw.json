@@ -75,6 +75,21 @@
     }
   },
   "skills": {
+    "allowBundled": [
+      "clawhub",
+      "coding-agent",
+      "discord",
+      "gifgrep",
+      "github",
+      "healthcheck",
+      "mcporter",
+      "model-usage",
+      "oracle",
+      "session-logs",
+      "skill-creator",
+      "summarize",
+      "tmux"
+    ],
     "install": {
       "nodeManager": "npm"
     }
