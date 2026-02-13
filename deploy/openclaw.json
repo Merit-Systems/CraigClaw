@@ -53,7 +53,10 @@
       "historyLimit": 50,
       "guilds": {
         "*": {
-          "requireMention": true
+          "requireMention": true,
+          "users": [
+            "*"
+          ]
         }
       }
     }
