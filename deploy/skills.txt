@@ -1,0 +1,11 @@
+# OpenClaw skill packs installed on EC2.
+# Install with: openclaw skills add <name>
+data-enrichment
+local-search
+media-generation
+news-shopping
+people-property
+social-intelligence
+upload-and-share
+wallet
+web-research

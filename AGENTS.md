@@ -65,10 +65,12 @@ For code work, figure out which repo to target:
 Your runtime is OpenClaw. Merit-Systems maintains a fork at `Merit-Systems/openclaw`
 (upstream: `openclaw/openclaw`). The fork is cloned locally at `~/Code/openclaw/openclaw`.
 
-When answering questions about your own functionality, capabilities, or configuration:
+The local clone is pinned to the deployed commit (detached HEAD). When answering
+questions about your own functionality, capabilities, or configuration:
 
-1. Pull latest: `cd ~/Code/openclaw/openclaw && git fetch && git pull`
-2. Read the relevant source or docs to give an accurate answer
+1. Fetch latest: `cd ~/Code/openclaw/openclaw && git fetch origin`
+2. Read source from `origin/main`: e.g. `git show origin/main:src/path/to/file.ts`
+3. Or to browse interactively: `git checkout origin/main` (then `git checkout $(cat ~/Code/merit-systems/CraigClaw/deploy/openclaw-pin)` when done)
 
 The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at
 `~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
