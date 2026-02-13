@@ -85,6 +85,21 @@ After taking action, respond with a single short message:
 
 Example: "Created PR #42 -- fixes the auth timeout in the login middleware."
 
+## OpenClaw Configuration
+
+Your OpenClaw config lives at `deploy/openclaw.json` in this repo. It is the
+source of truth — on every deploy it overwrites `~/.openclaw/openclaw.json`
+(merged with secrets that stay on EC2).
+
+To change your own config (heartbeat interval, mention patterns, concurrency,
+etc.), edit `deploy/openclaw.json` on a branch and create a PR. Never edit
+`~/.openclaw/openclaw.json` directly — changes will be overwritten on next
+deploy.
+
+The OpenClaw source is forked at `Merit-Systems/openclaw`. The deployed
+version is pinned by commit hash in `deploy/openclaw-pin`. Source changes
+go through PRs on that fork repo.
+
 ## x402 Payment Tools
 
 You have access to x402 payment APIs via mcporter:
