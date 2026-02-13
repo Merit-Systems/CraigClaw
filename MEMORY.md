@@ -49,6 +49,12 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - **Read shared message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
 - **Wallet**: must pay from Craig's x402 wallet (owner wallet)
 
+## Timezone
+
+- Team is in **Eastern Time (America/New_York)**. All user-facing times should be ET.
+- When creating cron jobs, always set `tz: "America/New_York"` on cron-expression schedules so DST transitions are handled automatically. Never hardcode UTC offsets.
+- Config: `agents.defaults.userTimezone` is set to `America/New_York` in openclaw.json.
+
 ## Infrastructure
 
 - Workspace repo: Merit-Systems/CraigClaw
