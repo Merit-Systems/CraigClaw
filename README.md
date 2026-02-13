@@ -26,7 +26,7 @@ Craig2 is Merit-Systems' AI agent, powered by [OpenClaw](https://github.com/open
            │                              │
            ▼                              │
 ┌─────────────────────────────────────────┴───────────────┐
-│              EC2 (100.31.3.155)                          │
+│              EC2 (100.31.229.192)                          │
 │    ~/Code/merit-systems/CraigClaw/  ← git clone         │
 │                                                         │
 │    OpenClaw daemon reads workspace files at session      │
@@ -49,7 +49,7 @@ The key insight: OpenClaw's workspace directory is just a git clone of this repo
 Discord message (@Craig2)
        |
        v
-OpenClaw daemon (EC2 100.31.3.155)
+OpenClaw daemon (EC2 100.31.229.192)
        |
        +--> Loads SOUL.md, AGENTS.md, TOOLS.md, MEMORY.md, IDENTITY.md
        |    (these define Craig's personality and behavior)
@@ -276,7 +276,7 @@ systemctl --user restart openclaw-gateway
 
 **Fresh setup:**
 
-1. Launch an EC2 instance (t3.small, Ubuntu 24.04, 25GB gp3)
+1. Launch an EC2 instance (t3.large, Ubuntu 24.04, 25GB gp3)
 2. SSH in and run the setup script:
    ```bash
    ssh ubuntu@<ec2-ip>
@@ -327,7 +327,7 @@ Changes pushed to `main` in this repo auto-deploy to EC2 via GitHub Actions.
 
 | Secret | Value |
 |--------|-------|
-| `EC2_HOST` | EC2 public IP (e.g., `100.31.3.155`) |
+| `EC2_HOST` | EC2 Elastic IP (`100.31.229.192`) |
 | `EC2_SSH_KEY` | Private SSH key for the `ubuntu` user |
 
 **Deploy flow:**
@@ -336,14 +336,24 @@ Changes pushed to `main` in this repo auto-deploy to EC2 via GitHub Actions.
 2. GitHub Actions triggers (`.github/workflows/deploy.yml`)
 3. SSHes into EC2 via `appleboy/ssh-action`
 4. Runs `git pull origin main` to update the workspace
-5. Runs `systemctl --user restart openclaw-gateway` to reload Craig
-6. Craig's next session uses the updated files
+5. Runs bundle patches (see below)
+6. Runs `systemctl --user restart openclaw-gateway` to reload Craig
+7. Craig's next session uses the updated files
+
+**Bundle patches** (applied automatically during deploy):
+
+| Script | What it does |
+|--------|-------------|
+| `deploy/patch-openclaw.sh` | Disables `isBillingErrorMessage()` — prevents false billing-error warnings triggered by x402 HTTP 402 responses |
+| `deploy/patch-compaction-notify.sh` | Injects a Discord notification before memory compaction so users know Craig is still alive during the 30-60s pause |
+
+Patches are idempotent and safe to re-run. See `.claude/patches.md` for full details.
 
 ## Operational Runbook
 
 ```bash
 # SSH in
-ssh -i ~/.ssh/craigclaw-key.pem ubuntu@100.31.3.155
+ssh -i ~/.ssh/craigclaw-key.pem ubuntu@100.31.229.192
 
 # Check status
 openclaw status --deep
@@ -384,13 +394,13 @@ mcporter call x402 get_wallet_info
 
 | Resource | Monthly Cost |
 |----------|-------------|
-| EC2 t3.small (2GB RAM) | ~$15 |
+| EC2 t3.large (8GB RAM) | ~$60 |
 | EBS 25GB gp3 | ~$2 |
 | Anthropic API (Claude Opus 4.6) | Pay-per-use |
 | x402 API calls | Pay-per-call (USDC on Base) |
 | GitHub App | Free |
 | Discord bot | Free |
-| **Infrastructure total** | **~$17/month** |
+| **Infrastructure total** | **~$62/month** |
 
 ## Related Repos
 
