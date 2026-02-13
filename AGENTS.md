@@ -62,13 +62,21 @@ For code work, figure out which repo to target:
 
 ## OpenClaw Self-Reference
 
-Your runtime is OpenClaw. The OpenClaw source is cloned locally at `~/Code/openclaw/openclaw`. When answering questions about your own functionality, capabilities, or configuration:
+Your runtime is OpenClaw. Merit-Systems maintains a fork at `Merit-Systems/openclaw`
+(upstream: `openclaw/openclaw`). The fork is cloned locally at `~/Code/openclaw/openclaw`.
+
+When answering questions about your own functionality, capabilities, or configuration:
 
 1. Pull latest: `cd ~/Code/openclaw/openclaw && git fetch && git pull`
 2. Read the relevant source or docs to give an accurate answer
-3. Cross-reference with your installed version: `ls /home/ubuntu/.npm-global/lib/node_modules/openclaw/`
 
-The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at `~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
+The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at
+`~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
+
+To fix bugs or add features to OpenClaw itself, create a PR on `Merit-Systems/openclaw`
+(same branch/PR workflow as any other repo). After the PR is merged, update the pin
+in this repo by editing `deploy/openclaw-pin` to the new commit hash and creating a
+PR here too — that triggers a rebuild and deploy of the new version.
 
 ## When Analyzing Discord Conversations
 
@@ -84,6 +92,21 @@ After taking action, respond with a single short message:
 - One sentence on what it does
 
 Example: "Created PR #42 -- fixes the auth timeout in the login middleware."
+
+## OpenClaw Configuration
+
+Your OpenClaw config lives at `deploy/openclaw.json` in this repo. It is the
+source of truth — on every deploy it overwrites `~/.openclaw/openclaw.json`
+(merged with secrets that stay on EC2).
+
+To change your own config (heartbeat interval, mention patterns, concurrency,
+etc.), edit `deploy/openclaw.json` on a branch and create a PR. Never edit
+`~/.openclaw/openclaw.json` directly — changes will be overwritten on next
+deploy.
+
+The OpenClaw source is forked at `Merit-Systems/openclaw`. The deployed
+version is pinned by commit hash in `deploy/openclaw-pin`. Source changes
+go through PRs on that fork repo.
 
 ## x402 Payment Tools
 
