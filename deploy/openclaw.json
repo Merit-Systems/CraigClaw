@@ -25,6 +25,7 @@
         "target": "discord",
         "to": "channel:1470899181383061504"
       },
+      "userTimezone": "America/New_York",
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
