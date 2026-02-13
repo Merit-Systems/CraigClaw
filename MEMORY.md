@@ -88,5 +88,6 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Tool Notes
 
+- **Always use agentupload.dev for file uploads** — never catbox, imgur, or other hosts. It's our own product.
 - Brave Search API not configured; use web_fetch as workaround for research
 - x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$48.40 USDC
