@@ -14,10 +14,47 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
+          command_timeout: 10m
           script: |
+            set -euo pipefail
+            export PATH="/home/ubuntu/.npm-global/bin:$PATH"
+
             cd ~/Code/merit-systems/CraigClaw
             git pull origin main
-            bash deploy/patch-openclaw.sh
-            bash deploy/patch-compaction-notify.sh
+
+            # 1. Update OpenClaw if pin changed
+            OPENCLAW_DIR=~/Code/openclaw/openclaw
+            PIN=$(cat deploy/openclaw-pin | tr -d '[:space:]')
+            CURRENT=$(cd $OPENCLAW_DIR && git rev-parse --short HEAD)
+            if [ "$PIN" != "$CURRENT" ]; then
+              echo "OpenClaw pin changed: $CURRENT -> $PIN"
+              cd $OPENCLAW_DIR
+              git fetch origin
+              git checkout $PIN
+              pnpm install --frozen-lockfile
+              pnpm build
+              npm install -g .
+              cd ~/Code/merit-systems/CraigClaw
+            else
+              echo "OpenClaw pin unchanged ($CURRENT)"
+            fi
+
+            # 2. Render config (repo base + EC2 secrets)
+            jq -s '.[0] * .[1]' deploy/openclaw.json ~/.openclaw/secrets.json \
+              > ~/.openclaw/openclaw.json
+
+            # 3. Sync credential scripts
+            cp deploy/craig/get-github-token.sh ~/.config/craig/
+            cp deploy/craig/git-credential-helper.sh ~/.config/craig/
+            cp deploy/craig/start-openclaw.sh ~/.config/craig/
+            chmod +x ~/.config/craig/*.sh
+
+            # 4. Sync systemd override
+            mkdir -p ~/.config/systemd/user/openclaw-gateway.service.d
+            cp deploy/craig/github.conf \
+              ~/.config/systemd/user/openclaw-gateway.service.d/
+            systemctl --user daemon-reload
+
+            # 5. Restart
             systemctl --user restart openclaw-gateway
             echo "Deployed $(git log --oneline -1)"
