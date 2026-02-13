@@ -71,7 +71,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Communication Rules
 - Never use contrastive appositions (e.g. "That's not X, that's Y"). Mason hates them.
-- CAIA Daily Briefing styling: always match the Feb 12 original (https://f.agentupload.dev/vm9qxcdh7x/CAIA-daily-brief-2026-02-12.html) — dark bg, green/red monospace text, TOP SECRET headers, margin annotations, classification stamps. Mason specifically liked the color scheme and annotations. Don't deviate.
+- CAIA Daily Briefing styling: always match the Feb 12 original (https://f.agentupload.dev/vm9qxcdh7x/CAIA-daily-brief-2026-02-12.html) — light parchment bg (#fdf6e3), dark text, Courier monospace, red TOP SECRET stamps (#c0392b), blue Comic Sans margin annotations (#2244cc), coffee stain ring, hover-to-reveal redacted text, diagonal "MERIT EYES ONLY" watermark, dashed red threat level box. Mason specifically liked the color scheme and annotations. Don't deviate.
 
 ## Decisions
 
