@@ -38,12 +38,15 @@ This file contains durable facts and decisions that persist across sessions. Cra
 ## Craig's Email
 
 - **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC one-time)
-- **Inbox**: craig@x402email.com (purchased 2026-02-12, $1 USDC/month, expires 2026-03-14)
+- **Inbox (shared domain)**: craig@x402email.com (purchased 2026-02-12, $1 USDC/month, expires 2026-03-14)
+- **Inbox (subdomain)**: craig@craig.x402email.com (purchased 2026-02-13, $0.25, 500 msg cap, retainMessages enabled)
 - **Send from**: any address @craig.x402email.com (e.g. biden@craig.x402email.com, classified@craig.x402email.com)
-- **Receive at**: craig@x402email.com (programmatic mailbox, retainMessages enabled, no forwarding)
+- **Receive at**: craig@craig.x402email.com (primary reply-to) and craig@x402email.com (legacy)
 - **Send endpoint**: POST https://x402email.com/api/subdomain/send ($0.005/email)
-- **Read inbox**: POST https://x402email.com/api/inbox/messages ($0.001/call) with body {"username":"craig"}
-- **Read message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
+- **Read subdomain inbox**: POST https://x402email.com/api/subdomain/inbox/messages ($0.001/call) with body {"subdomain":"craig","localPart":"craig"}
+- **Read subdomain message**: POST https://x402email.com/api/subdomain/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
+- **Read shared inbox**: POST https://x402email.com/api/inbox/messages ($0.001/call) with body {"username":"craig"}
+- **Read shared message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
 - **Wallet**: must pay from Craig's x402 wallet (owner wallet)
 
 ## Infrastructure

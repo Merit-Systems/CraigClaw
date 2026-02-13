@@ -25,7 +25,22 @@ Run `df -h /` and `free -m`. Also run `mcporter call x402 get_wallet_info` to ch
 
 If any threshold is breached: send one short message to Discord with the number(s). If all fine: say nothing.
 
-## 3. Proactive Work (twice daily)
+## 3. Email Check (once daily)
+
+**Gate:** Check the current UTC hour (`date -u +%H`). Only run during hour **14** (10am ET). If other hour, skip.
+
+Check both inboxes for new messages:
+1. Subdomain inbox: `mcporter call x402.fetch url="https://x402email.com/api/subdomain/inbox/messages" method=POST body='{"subdomain":"craig","localPart":"craig"}'`
+2. Shared inbox: `mcporter call x402.fetch url="https://x402email.com/api/inbox/messages" method=POST body='{"username":"craig"}'`
+
+For each message, check if its `messageId` is already in `~/.craig-notified-emails`. If NOT already notified:
+1. Read the full message via the appropriate `/messages/read` endpoint
+2. Post a short summary to Discord #craig channel: who it's from, subject, 1-line preview
+3. Append the `messageId` to `~/.craig-notified-emails` (one per line)
+
+Never notify about the same email twice. Silent if no new emails.
+
+## 4. Proactive Work (twice daily)
 
 **Gate:** Check the current UTC hour (`date -u +%H`). Only run this section during hours **10** and **22** (10am and 10pm UTC). If it's any other hour, skip entirely. Also check `~/.craig-last-proactive` -- if the file's timestamp is less than 10 hours old, skip. After running, `touch ~/.craig-last-proactive`.
 
