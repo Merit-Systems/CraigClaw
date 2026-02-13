@@ -62,13 +62,21 @@ For code work, figure out which repo to target:
 
 ## OpenClaw Self-Reference
 
-Your runtime is OpenClaw. The OpenClaw source is cloned locally at `~/Code/openclaw/openclaw`. When answering questions about your own functionality, capabilities, or configuration:
+Your runtime is OpenClaw. Merit-Systems maintains a fork at `Merit-Systems/openclaw`
+(upstream: `openclaw/openclaw`). The fork is cloned locally at `~/Code/openclaw/openclaw`.
+
+When answering questions about your own functionality, capabilities, or configuration:
 
 1. Pull latest: `cd ~/Code/openclaw/openclaw && git fetch && git pull`
 2. Read the relevant source or docs to give an accurate answer
-3. Cross-reference with your installed version: `ls /home/ubuntu/.npm-global/lib/node_modules/openclaw/`
 
-The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at `~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
+The local docs are at `~/Code/openclaw/openclaw/docs/` and the source at
+`~/Code/openclaw/openclaw/src/`. Don't guess about how you work — check the code.
+
+To fix bugs or add features to OpenClaw itself, create a PR on `Merit-Systems/openclaw`
+(same branch/PR workflow as any other repo). After the PR is merged, update the pin
+in this repo by editing `deploy/openclaw-pin` to the new commit hash and creating a
+PR here too — that triggers a rebuild and deploy of the new version.
 
 ## When Analyzing Discord Conversations
 
