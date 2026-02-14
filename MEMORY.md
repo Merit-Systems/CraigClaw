@@ -34,6 +34,8 @@ This file contains durable facts and decisions that persist across sessions. Cra
 ### Sam's Family
 - **TJ "Teej" Ragsdale**: Sam's older brother. Phone: (914) 500-5657. CEO & Co-Founder of Raad Labs (Miami). Raad builds decentralized weather/environmental sensor networks using web3 — raised $2.25M led by CoinFund (Tribe, EV3, Protagonist also in). Previously co-founded Entheos Network (battery storage protocol). LinkedIn: linkedin.com/in/tj-teej-ragsdale-879ba6b9. Speaker at Commercial UAV Expo. Sam describes him as "jacked and a monkey man" and "the best." Based in Miami area (possibly Longboat Key FL per Facebook). Raad focuses on weather, air quality, soil data, wildfire risk, greenhouse gas monitoring.
 
+- **Sam's Dad (Mr. Ragsdale)**: Phone: (917) 562-8400. Recently retired CFO from a small business lender. Very sharp guy, now super chill. Loves weed gummies. Sam finds this hilarious.
+
 ### Key People (non-team)
 - Emily Devery: Sam's fiancée, designer at Goodby Silverstein & Partners, email: emily.b.devery@gmail.com, portfolio: emilydevery.com
 - Lucas Shin: email: lucas@artemisanalytics.com (Artemis Analytics)
