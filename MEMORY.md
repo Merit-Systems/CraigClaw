@@ -12,8 +12,8 @@ This file contains durable facts and decisions that persist across sessions. Cra
 | Name | Email | GitHub | Discord | Twitter | Avatar URL | Avatar Description |
 |------|-------|--------|---------|---------|------------|-------------------|
 | Sam Ragsdale | sam@merit.systems | sragss (u/65786432) | sragss_ms_99022 (ID 1371963708925935658) | @samrags_ | `https://avatars.githubusercontent.com/u/65786432?v=4&s=400` | Young man, short dark brown hair, light eyes, blue button-up shirt, warm smile, outdoor venue |
-| Ryan Sproule | ryan@merit.systems | rsproule (u/24497652) | rsproule | @ryanfsproule | `https://avatars.githubusercontent.com/u/24497652?v=4&s=400` | Cyberpunk/sci-fi digital illustration (not a real photo) |
-| Mason Hall | mason@merit.systems | fmhall (u/11855252) | .masonhall (ID 357301396212547594) | @0xMasonH | `https://avatars.githubusercontent.com/u/11855252?v=4&s=400` | Pixel art - brown hair, goatee, dark top, sunset bg |
+| Ryan Sproule | ryan@merit.systems | rsproule (u/24497652) | rsproule | @ryanfsproule | (412) 780-2335 | `https://avatars.githubusercontent.com/u/24497652?v=4&s=400` | Cyberpunk/sci-fi digital illustration (not a real photo) |
+| Mason Hall | mason@merit.systems | fmhall (u/11855252) | .masonhall (ID 357301396212547594) | @0xMasonH | (609) 339-8647 | `https://avatars.githubusercontent.com/u/11855252?v=4&s=400` | Pixel art - brown hair, goatee, dark top, sunset bg |
 | Shafu | shafu@merit.systems | shafu0x (u/12211335) | — | @shafu0x | `https://avatars.githubusercontent.com/u/12211335?v=4&s=400` | Pixel art - dark curly hair, glasses, stubble, white shirt |
 | Jason Hedman | jason@merit.systems | jasonhedman (u/40368124) | — | @jsonhedman | `https://avatars.githubusercontent.com/u/40368124?v=4&s=400` | Young man, wavy brown hair, navy suit, red tie, formal portrait |
 | Alvaro Echevarria Cuesta | alvaro@merit.systems | alvaroechevarriacuesta (u/126526313) | — | — | `https://avatars.githubusercontent.com/u/126526313?v=4&s=400` | B&W photo, muscular build, short dark hair fade |
@@ -30,6 +30,9 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Only Mason's photo meets 800x800 target. Others are 460x460 (GitHub) or 390x390 (Ben).
 - Mitch: no photo found — need last name to search further
 - LinkedIn profiles: Sam (sam-ragsdale-2ba55b122), Ryan (ryansproule), Shafu (sharif-elfouly-975146142), Mason (hallmason), Jason (jason-hedman), Alvaro (alvaro-echevarria-cuesta-6687b91b4)
+
+### Sam's Family
+- **TJ "Teej" Ragsdale**: Sam's older brother. Phone: (914) 500-5657. CEO & Co-Founder of Raad Labs (Miami). Raad builds decentralized weather/environmental sensor networks using web3 — raised $2.25M led by CoinFund (Tribe, EV3, Protagonist also in). Previously co-founded Entheos Network (battery storage protocol). LinkedIn: linkedin.com/in/tj-teej-ragsdale-879ba6b9. Speaker at Commercial UAV Expo. Sam describes him as "jacked and a monkey man" and "the best." Based in Miami area (possibly Longboat Key FL per Facebook). Raad focuses on weather, air quality, soil data, wildfire risk, greenhouse gas monitoring.
 
 ### Key People (non-team)
 - Emily Devery: Sam's fiancée, designer at Goodby Silverstein & Partners, email: emily.b.devery@gmail.com, portfolio: emilydevery.com
@@ -80,6 +83,14 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Never use contrastive appositions (e.g. "That's not X, that's Y"). Mason hates them.
 - CAIA Daily Briefing styling: always match the Feb 12 original (https://f.agentupload.dev/vm9qxcdh7x/CAIA-daily-brief-2026-02-12.html) — light parchment bg (#fdf6e3), dark text, Courier monospace, red TOP SECRET stamps (#c0392b), blue Comic Sans margin annotations (#2244cc), coffee stain ring, hover-to-reveal redacted text, diagonal "MERIT EYES ONLY" watermark, dashed red threat level box. Mason specifically liked the color scheme and annotations. Don't deviate.
 - CAIA briefings MUST hyperlink aggressively to source material — every tweet, article, PR, repo, or claim should link to the original. No unsourced intel.
+
+## x402 Server Plans
+
+- **Repo**: Merit-Systems/x402-server-plans — the execution queue for new x402 resources
+- Plans in this repo are **bulletproof and execution-ready** (one-shot build with API keys)
+- For rougher x402 resource ideas (like Planet satellite data), create an Ideas doc in that repo to be fleshed out later
+- **Build order**: SMS → Transcription → Document Parsing → File Conversion → Domain Registration
+- **Existing services**: x402email (SES wrapper), agentupload (S3 wrapper), enrichx402 (data APIs), StableStudio (media gen)
 
 ## Decisions
 
