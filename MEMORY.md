@@ -41,6 +41,12 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Lucas Shin: email: lucas@artemisanalytics.com (Artemis Analytics)
 - Phil Budding: Sam's best friend, WashU roommates (Class of 2019). Email: phil.budding@gmail.com. LinkedIn: linkedin.com/in/philip-budding-88648042. BA Economics & Philosophy from WashU, Commonwealth School (Boston) for high school. National Merit Semi-Finalist, varsity basketball. Career in hard tech / aerospace: Co-founded Mission Control (hard tech accelerator connecting Midwest talent w/ pre-seed startups — cohort included Talyn Air, Pipedream Labs, ExoSonic). Associate at 208 Seed Ventures (hard tech angels — Boom Supersonic, Mojo Vision). Commercialization at Talyn Air (eVTOL, acquired by Ampaire). Head of Ops at Passtur (lights-out food manufacturing). Head of Corp Dev at Salient Motion (aerospace actuation components). LP at Countdown Capital (American industrial base investing). Currently: Operations at AMCA (Advanced Manufacturing Company of America) — aerospace defense components, $76.5M raised from Lux Capital, Founders Fund, Caffeinated Capital, a16z. Bio: "Operator & investor interested in things that fly." Sigma Chi fraternity at WashU (same as Sam). Chess club. Both he and Sam are in the hard tech / deep tech orbit. Phil liked Ryan Sproule's Merit Systems "Future 50" post on LinkedIn.
 
+### Sam's Friends (WashU / personal)
+- Zoe Baxter: Sam's friend. Phone: (213) 422-6621.
+- Sean Clarke: Sam's friend, WashU Class of 2019. Phone: (203) 451-6477. BA Economics @ WashU, studied abroad at Copenhagen Business School. Originally from Connecticut (Fairfield County). Varsity baseball at WashU. Interned at MLB HQ (2017) and Houston Astros (2018). Career: Paylocity since 2019 — Emerging Leader Associate → Knowledge Manager (led team of 11) → Senior Product Marketing Specialist - Competitive Intelligence → Competitive Enablement Lead (current, built compete program from scratch). Based in Chicago. LinkedIn: linkedin.com/in/sean-clarke-939921106.
+- Rob Roche: Sam's friend, WashU. Phone: (708) 557-1851. From Shanghai, Japanese heritage. Father was US Ambassador to Asia under President Obama. Based in Chicago area (708 area code = western suburbs).
+- Rob's father: Former US Ambassador to Asia under Obama (diplomatic service).
+
 ## Craig's Email
 
 - **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC one-time)
