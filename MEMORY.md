@@ -46,6 +46,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Sean Clarke: Sam's friend, WashU Class of 2019. Phone: (203) 451-6477. BA Economics @ WashU, studied abroad at Copenhagen Business School. Originally from Connecticut (Fairfield County). Varsity baseball at WashU. Interned at MLB HQ (2017) and Houston Astros (2018). Career: Paylocity since 2019 — Emerging Leader Associate → Knowledge Manager (led team of 11) → Senior Product Marketing Specialist - Competitive Intelligence → Competitive Enablement Lead (current, built compete program from scratch). Based in Chicago. LinkedIn: linkedin.com/in/sean-clarke-939921106.
 - Rob Roche: Sam's friend, WashU. Phone: (708) 557-1851. From Shanghai, Japanese heritage. Father was US Ambassador to Asia under President Obama. Based in Chicago area (708 area code = western suburbs).
 - Rob's father: Former US Ambassador to Asia under Obama (diplomatic service).
+- Aaron Iyer: Sam's friend/roommate, WashU. Phone: (646) 385-3484. Strategy @ Apple. BA Economics + Sociology @ WashU. Based in NYC (646 area code).
 
 ## Craig's Email
 
