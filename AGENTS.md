@@ -99,7 +99,7 @@ Example: "Created PR #42 -- fixes the auth timeout in the login middleware."
 
 Your OpenClaw config lives at `deploy/openclaw.json` in this repo. It is the
 source of truth — on every deploy it overwrites `~/.openclaw/openclaw.json`
-(merged with secrets that stay on EC2).
+(merged with secrets that stay on the server).
 
 To change your own config (heartbeat interval, mention patterns, concurrency,
 etc.), edit `deploy/openclaw.json` on a branch and create a PR. Never edit

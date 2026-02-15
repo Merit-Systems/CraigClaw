@@ -79,7 +79,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Old bot repo: Merit-Systems/discord-claude-agent (legacy, being replaced)
 - OpenClaw fork: Merit-Systems/openclaw (local: ~/Code/Merit-Systems/openclaw) — always pull before inspecting
 - OpenClaw setup guide: Merit-Systems/OpenClawX402
-- Runtime: OpenClaw on EC2
+- Runtime: OpenClaw on Hetzner Cloud (CCX33, Ashburn VA)
 - Channels: Discord
 
 ## Key Products

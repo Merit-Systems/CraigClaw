@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-# CraigClaw EC2 Setup Script
-# Run this on a fresh Ubuntu 24.04 EC2 instance after SSH'ing in.
+# CraigClaw Server Setup Script
+# Run this on a fresh Ubuntu 24.04 instance after SSH'ing in.
 #
 # Prerequisites:
-#   - EC2 instance running (see Merit-Systems/OpenClawX402/EC2.md)
+#   - Server running (Hetzner Cloud CCX or similar)
 #   - SSH access configured
 #
 # Usage:
@@ -17,7 +17,7 @@ set -euo pipefail
 #   3. Place GitHub App private key at ~/.config/craig/github-app-key.pem
 #   4. Install x402 (see Merit-Systems/OpenClawX402/x402.md)
 
-echo "=== CraigClaw EC2 Setup ==="
+echo "=== CraigClaw Server Setup ==="
 
 # 1. Install Node.js 22
 echo "Installing Node.js 22..."
@@ -26,7 +26,7 @@ sudo apt-get install -y nodejs
 
 # 2. Install pnpm (needed to build OpenClaw from fork source)
 echo "Installing pnpm..."
-npm install -g pnpm
+sudo npm install -g pnpm
 
 # 3. Install GitHub CLI
 echo "Installing GitHub CLI..."

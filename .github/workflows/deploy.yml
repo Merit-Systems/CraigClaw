@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to EC2
+      - name: Deploy to server
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -39,7 +39,7 @@ jobs:
               echo "OpenClaw pin unchanged ($CURRENT)"
             fi
 
-            # 2. Render config (repo base + EC2 secrets)
+            # 2. Render config (repo base + server secrets)
             jq -s '.[0] * .[1]' deploy/openclaw.json ~/.openclaw/secrets.json \
               > ~/.openclaw/openclaw.json
 

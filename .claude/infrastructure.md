@@ -36,11 +36,7 @@ hcloud server poweron craig
 ssh -i ~/.ssh/hetzner-craig ubuntu@178.156.251.179 "nproc && free -h"
 ```
 
-## AWS teardown (pending)
+## AWS teardown (complete)
 
-Old EC2 is stopped but not terminated. After 24h+ of stable Hetzner operation:
-
-```bash
-aws ec2 terminate-instances --instance-ids i-0e2fb16c6e0fb83d0 --region us-east-1
-aws ec2 release-address --allocation-id eipalloc-0155d2c49a8667e13 --region us-east-1
-```
+Old EC2 instance `i-0e2fb16c6e0fb83d0` terminated and Elastic IP
+`eipalloc-0155d2c49a8667e13` released on 2026-02-15.
