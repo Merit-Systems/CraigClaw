@@ -47,6 +47,11 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Rob Roche: Sam's friend, WashU. Phone: (708) 557-1851. From Shanghai, Japanese heritage. Father was US Ambassador to Asia under President Obama. Based in Chicago area (708 area code = western suburbs).
 - Rob's father: Former US Ambassador to Asia under Obama (diplomatic service).
 - Aaron Iyer: Sam's friend/roommate, WashU. Phone: (646) 385-3484. Strategy @ Apple. BA Economics + Sociology @ WashU. Based in NYC (646 area code).
+- Alex Dee: Sam's friend. Phone: (332) 223-2341. Based in NYC (332 area code). Likely WashU connection.
+- Aidan McCormick: Sam's sister Eliza Ragsdale's boyfriend. Phone: (415) 400-6780. Works at EPRI (Electric Power Research Institute) on research/engineering for massive power lines and US infrastructure. Went to Wake Forest with Eliza. Based in SF area (415 area code).
+
+### Sam's Family (extended)
+- Eliza Ragsdale: Sam's sister. Went to Wake Forest. Boyfriend is Aidan McCormick.
 
 ## Craig's Email
 
