@@ -127,5 +127,5 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - **Always run the full CI check suite locally before pushing a PR** — look at `.github/workflows/` for the repo's CI config (ignore agent review workflows). Run the same lint, format:check, typecheck, knip, etc. commands locally and fix any failures before creating the PR.
 - Brave Search API not configured; use web_fetch as workaround for research
 - x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$252 USDC (topped up 2026-02-15)
-- **mcporter x402 MCP is broken**: `mcp.x402scan.com` returns Vercel DEPLOYMENT_NOT_FOUND. Need to fix URL, run locally, or bypass mcporter entirely.
+- **mcporter x402 MCP works fine**: Config is stdio (`npx -y @x402scan/mcp@latest`). The old hosted SSE at `mcp.x402scan.com` is dead but nothing points to it. If x402 calls fail, check network/npx cache, don't assume config is wrong.
 - Shafu: no unnecessary comments in code
