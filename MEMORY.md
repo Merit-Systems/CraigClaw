@@ -129,3 +129,6 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$252 USDC (topped up 2026-02-15)
 - **mcporter x402 MCP works fine**: Config is stdio (`npx -y @x402scan/mcp@latest`). The old hosted SSE at `mcp.x402scan.com` is dead but nothing points to it. If x402 calls fail, check network/npx cache, don't assume config is wrong.
 - Shafu: no unnecessary comments in code
+
+## Assignment Rule
+- Always assign PRs and issues to `sragss`, even when Craig does the work. Sam reviews everything.
