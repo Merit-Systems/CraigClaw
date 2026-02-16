@@ -75,6 +75,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Infrastructure
 
+- **Hetzner Cloud** (migrated from EC2 2026-02-15): 8-core AMD EPYC, 30GB RAM, Ashburn VA
 - Workspace repo: Merit-Systems/CraigClaw
 - Old bot repo: Merit-Systems/discord-claude-agent (legacy, being replaced)
 - OpenClaw fork: Merit-Systems/openclaw (local: ~/Code/Merit-Systems/openclaw) — always pull before inspecting
@@ -125,4 +126,6 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - **Always use agentupload.dev for file uploads** — never catbox, imgur, or other hosts. It's our own product.
 - **Always run the full CI check suite locally before pushing a PR** — look at `.github/workflows/` for the repo's CI config (ignore agent review workflows). Run the same lint, format:check, typecheck, knip, etc. commands locally and fix any failures before creating the PR.
 - Brave Search API not configured; use web_fetch as workaround for research
-- x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$48.40 USDC
+- x402 wallet: `0x6B173bf632a7Ee9151e94E10585BdecCd47bDAAf` on Base, ~$252 USDC (topped up 2026-02-15)
+- **mcporter x402 MCP is broken**: `mcp.x402scan.com` returns Vercel DEPLOYMENT_NOT_FOUND. Need to fix URL, run locally, or bypass mcporter entirely.
+- Shafu: no unnecessary comments in code
