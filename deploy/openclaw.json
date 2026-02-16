@@ -57,7 +57,12 @@
           "requireMention": true,
           "users": [
             "*"
-          ]
+          ],
+          "channels": {
+            "1472974111864000664": {
+              "requireMention": false
+            }
+          }
         }
       }
     }
