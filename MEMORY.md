@@ -37,7 +37,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - **Sam's Dad (Mr. Ragsdale)**: Phone: (917) 562-8400. Recently retired CFO from a small business lender. Very sharp guy, now super chill. Loves weed gummies. Sam finds this hilarious.
 
 ### Key People (non-team)
-- Emily Devery: Sam's fiancée, designer at Goodby Silverstein & Partners, email: emily.b.devery@gmail.com, portfolio: emilydevery.com
+- Emily Devery: Sam's fiancée, designer at Goodby Silverstein & Partners, email: emily.b.devery@gmail.com, portfolio: emilydevery.com. Wedding venue shopping in San Miguel de Allende, Mexico (Feb 2026).
 - Lucas Shin: email: lucas@artemisanalytics.com (Artemis Analytics)
 - Phil Budding: Sam's best friend, WashU roommates (Class of 2019). Phone: (781) 439-8202. Email: phil.budding@gmail.com. LinkedIn: linkedin.com/in/philip-budding-88648042. BA Economics & Philosophy from WashU, Commonwealth School (Boston) for high school. National Merit Semi-Finalist, varsity basketball. Career in hard tech / aerospace: Co-founded Mission Control (hard tech accelerator connecting Midwest talent w/ pre-seed startups — cohort included Talyn Air, Pipedream Labs, ExoSonic). Associate at 208 Seed Ventures (hard tech angels — Boom Supersonic, Mojo Vision). Commercialization at Talyn Air (eVTOL, acquired by Ampaire). Head of Ops at Passtur (lights-out food manufacturing). Head of Corp Dev at Salient Motion (aerospace actuation components). LP at Countdown Capital (American industrial base investing). Currently: Operations at AMCA (Advanced Manufacturing Company of America) — aerospace defense components, $76.5M raised from Lux Capital, Founders Fund, Caffeinated Capital, a16z. Bio: "Operator & investor interested in things that fly." Sigma Chi fraternity at WashU (same as Sam). Chess club. Both he and Sam are in the hard tech / deep tech orbit. Phil liked Ryan Sproule's Merit Systems "Future 50" post on LinkedIn.
 
@@ -66,6 +66,11 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - **Read shared inbox**: POST https://x402email.com/api/inbox/messages ($0.001/call) with body {"username":"craig"}
 - **Read shared message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
 - **Wallet**: must pay from Craig's x402 wallet (owner wallet)
+
+## Key Dates
+
+- **Feb 26, 2026**: LAUNCH DAY. Big launch with Tempo. "Things go ballistic" after this. Tempo = elite team.
+- **Feb 16-22, 2026**: Sam in San Miguel de Allende, Mexico — venue shopping for wedding with Emily.
 
 ## Timezone
 
