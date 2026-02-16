@@ -131,4 +131,5 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Shafu: no unnecessary comments in code
 
 ## Assignment Rule
-- Always assign PRs and issues to `sragss`, even when Craig does the work. Sam reviews everything.
+- Assign PRs and issues to whoever requested the work on Discord (Sam → sragss, Ryan → rsproule, etc.)
+- If Craig does proactive/self-initiated work, assign to sragss by default.
