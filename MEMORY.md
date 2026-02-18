@@ -95,9 +95,22 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - x402scan-mcp: MCP plugin for agents to spend on x402 resources
 - Poncho: Batteries-included desktop app (Claude + x402scan-mcp)
 - Enterprise: Fully custom agentic solutions, high-value knowledge work
-- agentupload.dev: Simple file hosting for agents — upload via x402 payment, get a public URL back
-- x402email.com: Send emails (with attachments) via x402 payment — supports custom subdomains, inboxes, and .ics calendar invites
 - Echo: "User pays" AI SDK (previous product, market didn't scale as expected)
+
+## The Stables (monorepo)
+
+All x402 resource services live in **Merit-Systems/the-stables** monorepo (`apps/` dir).
+
+| App | Domain | Old Name / Repo |
+|-----|--------|-----------------|
+| StableStudio | stablestudio.dev | StableStudio (stablestudio.io) — image/video generation |
+| StableEnrich | stableenrich.dev | enrichx402 (enrichx402.com) — data enrichment, search, scraping |
+| StablePhone | stablephone.dev | x402phone — phone calls via Bland.ai |
+| StableMail | stablemail.dev | x402email (x402email.com) — email sending, inboxes, subdomains |
+| StableSocial | stablesocial.dev | social-x402 (socialx402.com) — social media APIs |
+| StableUpload | stableupload.dev? | agentupload (agentupload.dev) — file hosting |
+
+Old standalone repos (enrichx402, x402email, StableStudio, social-x402, x402phone) are now legacy — all development in the-stables.
 
 ## Communication Rules
 - Never use contrastive appositions (e.g. "That's not X, that's Y"). Mason hates them.
