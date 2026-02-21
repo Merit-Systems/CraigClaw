@@ -151,3 +151,65 @@ Old standalone repos (enrichx402, x402email, StableStudio, social-x402, x402phon
 ## Assignment Rule
 - Assign PRs and issues to whoever requested the work on Discord (Sam → sragss, Ryan → rsproule, etc.)
 - If Craig does proactive/self-initiated work, assign to sragss by default.
+
+## Discord Custom Emoji Format
+- Custom emoji reactions require `name:id` format (e.g. `fatbiden:1471188095478137007`)
+- Just passing the name (e.g. `fatbiden`) returns "Unknown Emoji"
+- OpenClaw's `normalizeReactionEmoji` doesn't auto-resolve guild emoji names to IDs
+- Unicode emoji (e.g. 🫡) works fine with just the character
+
+### Emoji ID Quick Reference
+| Name | ID |
+|------|-----|
+| fatbiden | 1471188095478137007 |
+| fatcraig | 1470894602797056090 |
+| onitboss | 1437612072769945730 |
+| gigabrain | 1414792661428076604 |
+| gong | 1468707141966889017 |
+| stonks | 1386883639354327060 |
+| notstonks | 1386883640977526905 |
+| pain | 1386883636770508831 |
+| GatoXD | 1387452750278824098 |
+| Doggodance | 1387452749003751424 |
+| merit_donut | 1419751325855645757 |
+| noice | 1387452752644411432 |
+| wowwowow | 1387452753877401670 |
+| thinkboy | 1448098605210096148 |
+| smart | 1387452751641968801 |
+| oof | 1386884694142091467 |
+| facepalm | 1386883902605492355 |
+| ban | 1386883896687333479 |
+| no | 1380266200004562964 |
+| minus1 | 1386884692980011038 |
+| meme | 1386883634186944562 |
+| eeeeeeeeeee | 1390062853540675594 |
+| let_me_in | 1380265982056071330 |
+| excuseme | 1380266026989518939 |
+| angerfire | 1386884689570172970 |
+| communist | 1386883898017058899 |
+| tacticalnukeisco | 1386884695391735868 |
+| gunmouse | 1400494078109421618 |
+| hamster | 1400494088469479597 |
+| gigaclaude | 1467920369179430979 |
+| fortnitelogo | 1386883903733764228 |
+| fadebara | 1468406094241071245 |
+| mulefade | 1468280225300218039 |
+| catfade | 1438572816931880970 |
+| 1_ | 1386883635378126960 |
+| merit | 1374129211287011488 |
+| poncho | 1466858250493366293 |
+| icedoutponcho | 1468403500391207230 |
+| linear | 1396937516287791284 |
+| json | 1398379932979302460 |
+| shadowjson | 1410696301250613419 |
+| chadjson | 1463927214570602622 |
+| fatjson | 1466588963933261926 |
+| shafu | 1397019427219705949 |
+| gigashafu | 1446623864716132493 |
+| bigshafu | 1463705240007217243 |
+| gigamason | 1447700316870152192 |
+| chadben | 1461803119729049789 |
+| namjaben | 1471995192210096148 |
+| chudvatar | 1440391917710868530 |
+| greedyCTO | 1464019640903667866 |
+| greedyalvaro | 1466591803296846056 |
