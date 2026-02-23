@@ -215,3 +215,16 @@ Old standalone repos (enrichx402, x402email, StableStudio, social-x402, x402phon
 | chudvatar | 1440391917710868530 |
 | greedyCTO | 1464019640903667866 |
 | greedyalvaro | 1466591803296846056 |
+
+## Poncho Customer Feedback (from Granola calls, 2026-02-23)
+
+Eight themes from real customer calls:
+
+1. **💸 Cost Transparency**: Users want pre-flight cost estimates and live spend meters. Some resist usage-based pricing vs flat fee. → Add budget presets, burst overrides.
+2. **🔒 Enterprise Install & Access**: SentinelOne / MDM blocking installs. Need browser-based/cloud mode, SSO, company wallets, admin-managed connectors.
+3. **🧭 Workflow UX & Tasking**: Request for Chrome-style tabs (not sidebar), limit active tasks to 2-3, archive completed. Artifact placement bugs. Need required-parameter guards (e.g. distance filters).
+4. **🧰 API Catalog & Control**: Want searchable "app store" of tools with per-workflow whitelists, cost per call, capability tags. High-demand additions: HeyGen, Instagram.
+5. **🔁 Recurring Automation & Alerts**: Daily TikTok analysis, funding announcements, job change alerts. Need scheduler + triggers with budget caps and auto-pause.
+6. **🎯 Data Quality & Targeting**: Geo-precision issues (LA search returning wrong towns). Need default distance filters, confidence scores, strict vs broad toggle.
+7. **📤 Exports & CRM Integration**: CSV export for Salesforce, Loxo, HubSpot. Need field mapping presets, webhook/Zapier, dedupe rules.
+8. **🛡️ Compliance & Safe Mode**: Legal/ToS concerns blocking enterprise adoption. Need "Compliance Mode" with verified APIs, audit trails, provenance logs, SOC controls.
