@@ -12,7 +12,7 @@ This file contains durable facts and decisions that persist across sessions. Cra
 | Name | Email | GitHub | Discord | Twitter | Avatar URL | Avatar Description |
 |------|-------|--------|---------|---------|------------|-------------------|
 | Sam Ragsdale | sam@merit.systems | sragss (u/65786432) | sragss_ms_99022 (ID 1371963708925935658) | @samrags_ | (914) 819-2831 | `https://avatars.githubusercontent.com/u/65786432?v=4&s=400` | Young man, short dark brown hair, light eyes, blue button-up shirt, warm smile, outdoor venue |
-| Ryan Sproule | ryan@merit.systems | rsproule (u/24497652) | rsproule | @ryanfsproule | (412) 780-2335 | `https://avatars.githubusercontent.com/u/24497652?v=4&s=400` | Cyberpunk/sci-fi digital illustration (not a real photo) |
+| Ryan Sproule | ryan@merit.systems | rsproule (u/24497652) | rsproule | @rsproule | (412) 780-2335 | `https://avatars.githubusercontent.com/u/24497652?v=4&s=400` | Cyberpunk/sci-fi digital illustration (not a real photo) |
 | Mason Hall | mason@merit.systems | fmhall (u/11855252) | .masonhall (ID 357301396212547594) | @0xMasonH | (609) 339-8647 | `https://avatars.githubusercontent.com/u/11855252?v=4&s=400` | Pixel art - brown hair, goatee, dark top, sunset bg |
 | Shafu | shafu@merit.systems | shafu0x (u/12211335) | — | @shafu0x | `https://avatars.githubusercontent.com/u/12211335?v=4&s=400` | Pixel art - dark curly hair, glasses, stubble, white shirt |
 | Jason Hedman | jason@merit.systems | jasonhedman (u/40368124) | — | @jsonhedman | `https://avatars.githubusercontent.com/u/40368124?v=4&s=400` | Young man, wavy brown hair, navy suit, red tie, formal portrait |
