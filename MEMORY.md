@@ -55,17 +55,18 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Craig's Email
 
-- **Subdomain**: craig.x402email.com (purchased 2026-02-12, $5 USDC one-time)
-- **Inbox (shared domain)**: craig@x402email.com (purchased 2026-02-12, $1 USDC/month, expires 2026-03-14)
-- **Inbox (subdomain)**: craig@craig.x402email.com (purchased 2026-02-13, $0.25, 500 msg cap, retainMessages enabled)
-- **Send from**: any address @craig.x402email.com (e.g. biden@craig.x402email.com, classified@craig.x402email.com)
-- **Receive at**: craig@craig.x402email.com (primary reply-to) and craig@x402email.com (legacy)
-- **Send endpoint**: POST https://x402email.com/api/subdomain/send ($0.005/email)
-- **Read subdomain inbox**: POST https://x402email.com/api/subdomain/inbox/messages ($0.001/call) with body {"subdomain":"craig","localPart":"craig"}
-- **Read subdomain message**: POST https://x402email.com/api/subdomain/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
-- **Read shared inbox**: POST https://x402email.com/api/inbox/messages ($0.001/call) with body {"username":"craig"}
-- **Read shared message**: POST https://x402email.com/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
+- **Domain**: stableemail.dev (migrated from x402email.com)
+- **Subdomain**: craig.stableemail.dev
+- **Inbox (subdomain)**: craig@craig.stableemail.dev (primary)
+- **Send from**: any address @craig.stableemail.dev (e.g. biden@craig.stableemail.dev, classified@craig.stableemail.dev, flights@craig.stableemail.dev)
+- **Receive at**: craig@craig.stableemail.dev
+- **Send endpoint**: POST https://stableemail.dev/api/subdomain/send ($0.005/email)
+- **Read subdomain inbox**: POST https://stableemail.dev/api/subdomain/inbox/messages ($0.001/call) with body {"subdomain":"craig","localPart":"craig"}
+- **Read subdomain message**: POST https://stableemail.dev/api/subdomain/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
+- **Read shared inbox**: POST https://stableemail.dev/api/inbox/messages ($0.001/call) with body {"username":"craig"}
+- **Read shared message**: POST https://stableemail.dev/api/inbox/messages/read ($0.001/call) with body {"messageId":"..."}
 - **Wallet**: must pay from Craig's x402 wallet (owner wallet)
+- **Legacy**: x402email.com still works but is deprecated — always use stableemail.dev
 
 ## Key Dates
 
@@ -110,7 +111,7 @@ All x402 resource services live in **Merit-Systems/the-stables** monorepo (`apps
 | StableStudio | stablestudio.dev | StableStudio (stablestudio.io) — image/video generation |
 | StableEnrich | stableenrich.dev | enrichx402 (enrichx402.com) — data enrichment, search, scraping |
 | StablePhone | stablephone.dev | x402phone — phone calls via Bland.ai |
-| StableMail | stablemail.dev | x402email (x402email.com) — email sending, inboxes, subdomains |
+| StableMail | stableemail.dev | x402email (x402email.com) — email sending, inboxes, subdomains |
 | StableSocial | stablesocial.dev | social-x402 (socialx402.com) — social media APIs |
 | StableUpload | stableupload.dev? | agentupload (agentupload.dev) — file hosting |
 
