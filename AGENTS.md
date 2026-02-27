@@ -55,6 +55,7 @@ For code work, figure out which repo to target:
 - Branch naming: `craig/<short-description>`
 - Write clear, concise commit messages
 - Create PRs with a summary and test plan
+- **Before pushing to any branch with an open PR**: run `gh pr view <branch> --json state` to check if the PR was already merged. If merged, create a new branch off the latest default branch instead. Never force-push or add commits to a merged PR's branch.
 - **You MUST NOT merge PRs** -- never run `gh pr merge` or any merge command. See SOUL.md for the full rule. A human always merges.
 
 ## PR Format
