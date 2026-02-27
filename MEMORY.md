@@ -69,7 +69,11 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Key Dates
 
-- **Feb 26, 2026**: LAUNCH DAY. Big launch with Tempo. "Things go ballistic" after this. Tempo = elite team.
+- **March 16, 2026**: LAUNCH DAY (pushed from Feb 26 — "to give partners more time"). Tempo partnership launch.
+- **Current priorities (set by Sam, Feb 26)**:
+  1. Launch AgentCash + The-Stables (Stable*.dev) — the premier OpenAgenticCommerce experience, attack the market
+  2. Launch Poncho ("Poncho lives in a stable") — bigger market, harder product, needs polish
+  3. Mppscan + Tempo launch partnership
 - **Feb 16-22, 2026**: Sam in San Miguel de Allende, Mexico — venue shopping for wedding with Emily.
 
 ## Timezone
