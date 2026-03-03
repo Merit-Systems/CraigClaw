@@ -70,11 +70,56 @@ This file contains durable facts and decisions that persist across sessions. Cra
 
 ## Key Dates
 
-- **March 16, 2026**: LAUNCH DAY (pushed from Feb 26 — "to give partners more time"). Tempo partnership launch.
-- **Current priorities (set by Sam, Feb 26)**:
-  1. Launch AgentCash + The-Stables (Stable*.dev) — the premier OpenAgenticCommerce experience, attack the market
-  2. Launch Poncho ("Poncho lives in a stable") — bigger market, harder product, needs polish
-  3. Mppscan + Tempo launch partnership
+- **March 15, 2026**: Target 10k AgentCash users
+- **Current priorities (set by Sam, Mar 2 weekly memo)**:
+  1. Launch AgentCash — reach 1k users THIS WEEK, 10k by Mar 15. Viral onboarding loop live by EOW. ~80% of resources here.
+  2. Launch mppscan
+  3. Launch Poncho
+
+### Week of Mar 1 — Team Assignments
+
+**Sam:**
+1. Maintain discovery monopoly
+2. Launch AgentCash, 1k active wallets, viral scale plan
+3. AgentConnect SF Demo
+4. Coinbase / Phantom distro partnerships
+5. Poncho prompting Loom (7-part Tweet thread as a Loom)
+6. Craig upgrade to AgentCash
+
+**Ryan (Beastmode):**
+1. AgentCash 1-step CLI install
+2. x402scan distributes AgentCash
+
+**Jason:**
+1. AgentCash L2 UGC install
+2. AgentCash "use" / "try" command
+
+**Alvaro:**
+1. Poncho migration complete
+2. Manhog mobile friendly (oneshot it). Admin invite codes. Proper wallet counter on AgentCash.dev. Good telemetry on untracked/non-partner wallets. Fresh pass at overall charts.
+3. Poncho onboarding and repair — only guy on Poncho, get ready for release.
+
+**Shafu:**
+1. Igor list: Labs checked vs didn't, fresh Claude pass on fence cases
+2. Help Sam make AgentConnect SF demo massive success
+3. Mackenzie's recruiting prompt in Poncho (Ambrook — biggest customer, shared Slack channel)
+4. x402 giga — bulletproof, clean
+
+**Mitch:**
+1. Find/reach out to/befriend every non-crypto, non-dog-shit resource on x402. Make them x402scan.com/discovery compatible. Prepare for co-marketing. All done by Thursday.
+2. Think through broader marketing push around x402scan.com/discovery (delicate — Coinbase wants a standard but will committee it for years; down on ~1mo timescale)
+
+**Mason:**
+1. Mitch activities
+2. Influencer marketing strat for AgentCash — ready to roll by Wednesday evening
+
+**Ben:** Enjoying Aruba, back Wednesday.
+
+### Key Strategic Context (Mar 2 memo)
+- ~8 serious wallet competitors in market, most focused on infrastructure/wallet layer — Merit focused on APPLICATION layer
+- Merit's bundle: the-stables + AgentCash + x402scan = world's first full-stack open agentic commerce solution
+- "We are at most three weeks ahead" — competitors coming, some already here
+- Protocol: Sam/Ryan share objective → team shares priorities → agree → write down → ruthlessly execute
 - **Feb 16-22, 2026**: Sam in San Miguel de Allende, Mexico — venue shopping for wedding with Emily.
 
 ## Timezone
