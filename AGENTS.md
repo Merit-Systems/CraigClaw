@@ -91,6 +91,17 @@ To fix bugs or add features to OpenClaw itself, create a PR on `Merit-Systems/op
 in this repo by editing `deploy/openclaw-pin` to the new commit hash and creating a
 PR here too — that triggers a rebuild and deploy of the new version.
 
+## Discord Context via discrawl
+
+Before answering questions about past conversations, team decisions, or "what did X say about Y":
+
+1. Search the local Discord archive: `discrawl search "relevant terms"`
+2. For channel-specific context: `discrawl messages --channel <name> --days N`
+3. For who-said-what: `discrawl messages --channel <name> --author <name> --days N`
+4. For mention tracking: `discrawl mentions --target <user> --days N`
+
+The archive is live-tailed (systemd service) and full-synced daily. Use it liberally — it's local SQLite, instant, and free.
+
 ## When Analyzing Discord Conversations
 
 1. Identify the core problem or request
