@@ -1,57 +1,44 @@
-# OpenClaw Bundle Patches
+# OpenClaw Fork Patches
 
-We patch the npm-installed OpenClaw bundle directly (not the source) to fix issues
-and add features that upstream doesn't support yet. Each patch is an idempotent
-bash script in `deploy/` that runs automatically during deploys via
-`.github/workflows/deploy.yml`.
+We maintain a fork at Merit-Systems/openclaw with source-level patches on top
+of upstream openclaw/openclaw. The fork is kept close to upstream — patches are
+minimal and documented here.
 
-## deploy/patch-openclaw.sh — Disable billing error false positives
+## Current fork patches (on top of upstream 2026.3.7)
 
-**Problem:** OpenClaw's `isBillingErrorMessage()` matches patterns like `/\b402\b/`,
-"payment required", "credit balance", etc. in ALL outbound text. Because Craig uses
-x402 MCP tools that return real HTTP 402 responses and payment-related text, this
-triggers false "billing error" warnings constantly.
+### feat(discord): auto-resolve guild emoji names (PR #3)
 
-**Fix:** Makes `isBillingErrorMessage()` return `false` unconditionally. Actual
-Anthropic API billing errors still surface as raw error text — they just don't get
-the misleading rewrite.
+**Problem:** When the agent reacts with a plain custom emoji name like `fatbiden`,
+Discord requires the `name:id` format. Without resolution, custom emoji reactions
+fail silently.
 
-**Target:** `$OPENCLAW_DIR/dist/pi-embedded-helpers-*.js`
+**Fix:** New `src/discord/guild-emoji-cache.ts` resolves plain emoji names by
+looking up guild emojis via the Discord API. Cache TTL is 5 minutes per guild.
+Integrated in `reactMessageDiscord()` before `normalizeReactionEmoji()`.
 
-**Sentinel:** `function isBillingErrorMessage(raw) { return false;` (checks for
-already-applied patch via grep)
+### feat: send Discord notification before memory compaction (PR #4)
 
-## deploy/patch-compaction-notify.sh — Discord notification before memory compaction
+**Problem:** Memory flush + compaction blocks the agent for 30-60+ seconds.
+Discord users see no response and may think the bot crashed.
 
-**Problem:** OpenClaw's memory flush + compaction cycle blocks the agent for 30-60+
-seconds. During this time, Discord users see no response and may think the bot crashed.
+**Fix:** Fire-and-forget `sendMessageDiscord()` call in `agent-runner-memory.ts`
+right before compaction starts. Picks a random Biden-flavored message from a
+10-item pool. Only fires for Discord sessions. Never blocks compaction.
 
-**Fix:** Injects a fire-and-forget `sendMessageDiscord()` call right before compaction
-starts. Picks a random Biden-flavored message from a 10-item pool so users know Craig
-is still alive.
+## Dropped patches (fixed upstream as of 2026.3.7)
 
-**Target:** The bundle file containing `runMemoryFlushIfNeeded` (e.g.
-`$OPENCLAW_DIR/dist/reply-DptDUVRg.js`)
+- **Billing error false positive** — upstream removed `shouldRewriteBillingText`
+  from `sanitizeUserFacingText` (commit `5e423b596`)
+- **currentMessageId for react/reactions** — upstream extracted shared
+  `resolveReactionMessageId()` used by all channels (commit `d9fdec12a` + handler)
+- **Discord media send timeouts** — upstream hardened media timeouts
+- **String(undefined) coercion** — was already an upstream commit
 
-**Anchor:** `let memoryCompactionCompleted = false;` — code is injected immediately
-after this line.
+## Bumping upstream
 
-**Sentinel:** `__COMPACTION_NOTIFY_PATCHED__` comment in the injected code.
+To sync with a newer upstream version:
 
-**Key design decisions:**
-- Fire-and-forget: no `await`, promise has `.catch(() => {})` — never blocks compaction
-- Outer `try/catch` swallows any synchronous errors
-- Only fires when `Provider === "discord"` and `OriginatingTo` is truthy
-- `sendMessageDiscord` is already in scope in the same bundle file
-
-## Adding a new patch
-
-1. Create `deploy/patch-<name>.sh` following the existing pattern:
-   - `set -euo pipefail`
-   - Locate the target file by searching for a known function/string
-   - Check a sentinel to ensure idempotency
-   - Apply the patch (prefer `node -e` for complex transforms, `sed -i` for simple ones)
-   - Print a status message
-2. Add `bash deploy/patch-<name>.sh` to `.github/workflows/deploy.yml` before the
-   `systemctl --user restart openclaw-gateway` line
-3. Document it in this file
+1. `cd Merit-Systems/openclaw && git fetch upstream`
+2. `git reset --hard upstream/main && git push origin main --force-with-lease`
+3. Re-apply patches as PRs (check if they're still needed first)
+4. Update `deploy/openclaw-pin` in CraigClaw to new fork HEAD
