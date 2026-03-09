@@ -33,7 +33,7 @@ jobs:
               git checkout $PIN
               pnpm install --frozen-lockfile
               pnpm build
-              npm install -g .
+              sudo npm install -g .
               cd ~/Code/merit-systems/CraigClaw
             else
               echo "OpenClaw pin unchanged ($CURRENT)"
