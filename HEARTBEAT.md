@@ -2,6 +2,16 @@
 
 This file runs every 30 minutes. Most tasks are silent. Do not be noisy.
 
+## ⚠️ ABSOLUTE RULE: SKIP = SILENCE
+
+**If a task's gate condition is not met (wrong hour, cooldown not expired, no new data), you SKIP it. Skipping means:**
+- Do NOT send a Discord message saying you skipped
+- Do NOT explain why you skipped
+- Do NOT mention the task at all
+- Just move to the next task or reply HEARTBEAT_OK
+
+**Violating this rule wastes the team's attention. Sam has asked 12+ times. This is final.**
+
 ## 1. Memory Sync (every run)
 
 Check for uncommitted changes in memory files (`MEMORY.md`, `memory/`, `USER.md`). If changes exist:
@@ -16,7 +26,17 @@ Only auto-push memory files. Never auto-push `SOUL.md`, `AGENTS.md`, `TOOLS.md`,
 
 Silent. No Discord message.
 
-## 2. Infrastructure Monitoring (every run)
+## 2. Scheduled Reminders (every run)
+
+Check `memory/` files for any entries matching `## Reminder:` with status `PENDING`. For each:
+
+1. Parse the **When** field for the target UTC hour.
+2. Compare against the current UTC hour (`date -u +%H`). If the current hour matches, send the reminder message to the appropriate Discord channel and update the status from `PENDING` to `DONE`.
+3. If the hour hasn't arrived yet, skip silently.
+
+Silent if no reminders are due.
+
+## 3. Infrastructure Monitoring (every run)
 
 Run `df -h /` and `mcporter call x402 get_wallet_info` to check disk and wallet.
 
@@ -29,13 +49,13 @@ Only alert if:
 
 If any threshold is breached: send one short message to Discord with the number(s) and timestamp. If all fine: say nothing.
 
-## 3. Email Check (once daily)
+## 4. Email Check (once daily)
 
 **Gate:** Check the current UTC hour (`date -u +%H`). Only run during hour **14** (10am ET). If other hour, skip.
 
 Check both inboxes for new messages:
-1. Subdomain inbox: `mcporter call x402.fetch url="https://x402email.com/api/subdomain/inbox/messages" method=POST body='{"subdomain":"craig","localPart":"craig"}'`
-2. Shared inbox: `mcporter call x402.fetch url="https://x402email.com/api/inbox/messages" method=POST body='{"username":"craig"}'`
+1. Subdomain inbox: `mcporter call x402.fetch url="https://stableemail.dev/api/subdomain/inbox/messages" method=POST body='{"subdomain":"craig","localPart":"craig"}'`
+2. Shared inbox: `mcporter call x402.fetch url="https://stableemail.dev/api/inbox/messages" method=POST body='{"username":"craig"}'`
 
 For each message, check if its `messageId` is already in `~/.craig-notified-emails`. If NOT already notified:
 1. Read the full message via the appropriate `/messages/read` endpoint
@@ -44,7 +64,7 @@ For each message, check if its `messageId` is already in `~/.craig-notified-emai
 
 Never notify about the same email twice. Silent if no new emails.
 
-## 4. Proactive Work (twice daily)
+## 5. Proactive Work (twice daily)
 
 **Gate:** Check the current UTC hour (`date -u +%H`). Only run this section during hours **10** and **22** (10am and 10pm UTC). If it's any other hour, skip entirely. Also check `~/.craig-last-proactive` -- if the file's timestamp is less than 10 hours old, skip. After running, `touch ~/.craig-last-proactive`.
 
