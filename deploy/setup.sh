@@ -53,8 +53,8 @@ git clone https://github.com/Merit-Systems/openclaw.git ~/Code/openclaw/openclaw
 
 # 7. Configure git
 echo "Configuring git..."
-git config --global user.name "craig2-bot"
-git config --global user.email "craig2@merit-systems.dev"
+git config --global user.name "craigbidenbot[bot]"
+git config --global user.email "260814249+craigbidenbot[bot]@users.noreply.github.com"
 git config --global init.defaultBranch main
 
 # 8. Copy credential scripts from repo
