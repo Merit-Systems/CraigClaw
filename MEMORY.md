@@ -122,6 +122,25 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - Protocol: Sam/Ryan share objective → team shares priorities → agree → write down → ruthlessly execute
 - **Feb 16-22, 2026**: Sam in San Miguel de Allende, Mexico — venue shopping for wedding with Emily.
 
+## Discord Archive (discrawl)
+
+- **Tool**: discrawl (https://github.com/steipete/discrawl) — mirrors Discord into local SQLite
+- **Binary**: `/usr/local/bin/discrawl`
+- **DB**: `~/.discrawl/discrawl.db`
+- **Config**: `~/.discrawl/config.toml` (reads token from OpenClaw config)
+- **Live tail**: `discrawl-tail.service` (systemd, auto-start, repairs every 30min)
+- **Daily sync cron**: 6am UTC full sync
+- **Stats**: ~42k messages, 151 channels, 84 threads, 15 members (as of 2026-03-08)
+- **Key commands**:
+  - `discrawl search "query"` — FTS search across all messages
+  - `discrawl messages --channel <name> --days 7` — recent messages in a channel
+  - `discrawl messages --channel <name> --author <name> --days N` — filtered
+  - `discrawl mentions --target <user> --days 7` — who mentioned whom
+  - `discrawl sql 'SELECT ...'` — raw SQL against the archive
+  - `discrawl status` — check archive health
+- **Use for**: Understanding team context, finding past decisions, recalling conversations, answering "what did X say about Y" questions
+- **Note**: Private threads return 403 (bot lacks "Manage Threads" permission) — public channels and public threads are fully archived
+
 ## Timezone
 
 - Team is in **Eastern Time (America/New_York)**. All user-facing times should be ET.
