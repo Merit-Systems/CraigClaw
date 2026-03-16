@@ -128,6 +128,10 @@ This file contains durable facts and decisions that persist across sessions. Cra
 - When creating cron jobs, always set `tz: "America/New_York"` on cron-expression schedules so DST transitions are handled automatically. Never hardcode UTC offsets.
 - Config: `agents.defaults.userTimezone` is set to `America/New_York` in openclaw.json.
 
+## Office
+
+- **Address:** Merit Systems, 300 Kent Ave, # 604, Brooklyn, NY 11249
+
 ## Infrastructure
 
 - **Hetzner Cloud** (migrated from EC2 2026-02-15): 8-core AMD EPYC, 30GB RAM, Ashburn VA
